@@ -49,9 +49,7 @@ namespace Supervisors
         //! Fixed-wing types
         ACFT_FIXEDWING = 1,
         //! Rotorcraft types (quad, hexa, etc)
-        ACFT_ROTOR = 2,
-        //! Lighter-than-air (blimp, balloon, etc)
-        ACFT_AEROSTAT = 3
+        ACFT_ROTOR = 2
       };
 
       //! %Task arguments.
@@ -68,7 +66,7 @@ namespace Supervisors
         //! Lost comms plan name
         std::string plan;
         //! Type of aircraft
-        Aircraft acft_type;
+        std::string acft_type;
       };
 
       struct Task: public DUNE::Tasks::Periodic
@@ -88,6 +86,8 @@ namespace Supervisors
         unsigned m_autonomy;
         //! Current desired path
         IMC::DesiredPath m_dpath;
+        //! Type of aircraft
+        Aircraft m_acft_type;
 
         Task(const std::string& name, Tasks::Context& ctx):
           Tasks::Periodic(name, ctx),
@@ -99,12 +99,12 @@ namespace Supervisors
           m_takeoff(UINT_MAX),
           m_land(UINT_MAX),
           m_in_lc(false),
-          m_autonomy(0)
-
+          m_autonomy(0),
+          m_acft_type(ACFT_UNKNOWN)
         {
           param("Aircraft Type", m_args.acft_type)
-          .defaultValue("Fixed-wing")
-          .values("Fixed-wing, Rotor, Aerostat")
+          .defaultValue("Fixedwing")
+          .values("Fixedwing, Rotor")
           .description("Type of aircraft being controlled");
 
           param("Default altitude", m_args.alt)
@@ -179,6 +179,15 @@ namespace Supervisors
           {
             m_land = UINT_MAX;
           }
+        }
+
+        void
+        onUpdateParameters(void)
+        {
+          if (m_args.acft_type == "Fixedwing")
+            m_acft_type = ACFT_FIXEDWING;
+          else if (m_args.acft_type == "Rotor")
+            m_acft_type = ACFT_ROTOR;
         }
 
         void
@@ -267,7 +276,7 @@ namespace Supervisors
 
           // Start loiter on current position if IdleManeuver is received
           // Should be used for fixed-wing only
-          if (m_args.acft_type != ACFT_FIXEDWING)
+          if (m_acft_type != ACFT_FIXEDWING)
             return;
 
           IMC::ControlLoops cloops;
