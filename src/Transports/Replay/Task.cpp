@@ -45,6 +45,7 @@ namespace Transports
       std::string startup_file;
       std::vector<std::string> msgs;
       std::vector<std::string> ents;
+      float delay;
     };
 
     static const int c_stats_period = 10;
@@ -109,6 +110,9 @@ namespace Transports
         param("Entities", m_args.ents)
         .defaultValue("")
         .description("Entities for which state should be reported");
+
+        param("Delay", m_args.delay)
+        .defaultValue("-1");
 
         bind<IMC::ReplayControl>(this);
       }
@@ -396,10 +400,12 @@ namespace Transports
             // Wait till the time is right
             double now = Clock::getSinceEpoch();
             double delta = new_ts - now;
-
             double delay;
 
-            if (delta >= 1e-03)
+            if (m_args.delay >= 0.0)
+              delta = m_args.delay;
+
+            if (delta >= 1e-03 || m_args.delay >= 0.0)
             {
               // Delay::wait does not behave satisfactorily otherwise
               // in some systems
