@@ -26,7 +26,7 @@
 //***************************************************************************
 // Automatically generated.                                                 *
 //***************************************************************************
-// IMC XML MD5: bd24744a7b3932c3a956ddc60e9abdd6                            *
+// IMC XML MD5: c3528fa857ce5aff6aac284a0596293e                            *
 //***************************************************************************
 
 // ISO C++ 98 headers.
@@ -19987,6 +19987,440 @@ namespace DUNE
       (void)bfr__;
       (void)size__;
       return 0;
+    }
+
+    HighpassControlParcel::HighpassControlParcel(void)
+    {
+      m_header.mgid = 900;
+      clear();
+    }
+
+    void
+    HighpassControlParcel::clear(void)
+    {
+      highpass = 0;
+      adot = 0;
+      slope_compensation = 0;
+      slope_compensation_difference = 0;
+      altitude = 0;
+      auto_altitude = 0;
+    }
+
+    bool
+    HighpassControlParcel::fieldsEqual(const Message& msg__) const
+    {
+      const IMC::HighpassControlParcel& other__ = static_cast<const HighpassControlParcel&>(msg__);
+      if (highpass != other__.highpass) return false;
+      if (adot != other__.adot) return false;
+      if (slope_compensation != other__.slope_compensation) return false;
+      if (slope_compensation_difference != other__.slope_compensation_difference) return false;
+      if (altitude != other__.altitude) return false;
+      if (auto_altitude != other__.auto_altitude) return false;
+      return true;
+    }
+
+    int
+    HighpassControlParcel::validate(void) const
+    {
+      return false;
+    }
+
+    uint8_t*
+    HighpassControlParcel::serializeFields(uint8_t* bfr__) const
+    {
+      uint8_t* ptr__ = bfr__;
+      ptr__ += IMC::serialize(highpass, ptr__);
+      ptr__ += IMC::serialize(adot, ptr__);
+      ptr__ += IMC::serialize(slope_compensation, ptr__);
+      ptr__ += IMC::serialize(slope_compensation_difference, ptr__);
+      ptr__ += IMC::serialize(altitude, ptr__);
+      ptr__ += IMC::serialize(auto_altitude, ptr__);
+      return ptr__;
+    }
+
+    uint16_t
+    HighpassControlParcel::deserializeFields(const uint8_t* bfr__, uint16_t size__)
+    {
+      const uint8_t* start__ = bfr__;
+      bfr__ += IMC::deserialize(highpass, bfr__, size__);
+      bfr__ += IMC::deserialize(adot, bfr__, size__);
+      bfr__ += IMC::deserialize(slope_compensation, bfr__, size__);
+      bfr__ += IMC::deserialize(slope_compensation_difference, bfr__, size__);
+      bfr__ += IMC::deserialize(altitude, bfr__, size__);
+      bfr__ += IMC::deserialize(auto_altitude, bfr__, size__);
+      return bfr__ - start__;
+    }
+
+    uint16_t
+    HighpassControlParcel::reverseDeserializeFields(const uint8_t* bfr__, uint16_t size__)
+    {
+      const uint8_t* start__ = bfr__;
+      bfr__ += IMC::reverseDeserialize(highpass, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(adot, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(slope_compensation, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(slope_compensation_difference, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(altitude, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(auto_altitude, bfr__, size__);
+      return bfr__ - start__;
+    }
+
+    void
+    HighpassControlParcel::fieldsToJSON(std::ostream& os__, unsigned nindent__) const
+    {
+      IMC::toJSON(os__, "highpass", highpass, nindent__);
+      IMC::toJSON(os__, "adot", adot, nindent__);
+      IMC::toJSON(os__, "slope_compensation", slope_compensation, nindent__);
+      IMC::toJSON(os__, "slope_compensation_difference", slope_compensation_difference, nindent__);
+      IMC::toJSON(os__, "altitude", altitude, nindent__);
+      IMC::toJSON(os__, "auto_altitude", auto_altitude, nindent__);
+    }
+
+    ReconState::ReconState(void)
+    {
+      m_header.mgid = 901;
+      clear();
+    }
+
+    void
+    ReconState::clear(void)
+    {
+      remotecontrolallowed = 0;
+      remotecontrolenabled = 0;
+      remotecontrolactive = 0;
+      depthonlycontrolenabled = 0;
+      directcontrolenabled = 0;
+      returntoclosestpointonline = 0;
+      onshorepower = 0;
+      latitude = 0;
+      longitude = 0;
+      depth = 0;
+      depthref = 0;
+      altitude = 0;
+      altituderef = 0;
+      pitch = 0;
+      roll = 0;
+      rpm = 0;
+      rpmref = 0;
+      speed = 0;
+      speedref = 0;
+      heading = 0;
+      headingrate = 0;
+      headingref = 0;
+      missionstate = 0;
+      leg = 0;
+    }
+
+    bool
+    ReconState::fieldsEqual(const Message& msg__) const
+    {
+      const IMC::ReconState& other__ = static_cast<const ReconState&>(msg__);
+      if (remotecontrolallowed != other__.remotecontrolallowed) return false;
+      if (remotecontrolenabled != other__.remotecontrolenabled) return false;
+      if (remotecontrolactive != other__.remotecontrolactive) return false;
+      if (depthonlycontrolenabled != other__.depthonlycontrolenabled) return false;
+      if (directcontrolenabled != other__.directcontrolenabled) return false;
+      if (returntoclosestpointonline != other__.returntoclosestpointonline) return false;
+      if (onshorepower != other__.onshorepower) return false;
+      if (latitude != other__.latitude) return false;
+      if (longitude != other__.longitude) return false;
+      if (depth != other__.depth) return false;
+      if (depthref != other__.depthref) return false;
+      if (altitude != other__.altitude) return false;
+      if (altituderef != other__.altituderef) return false;
+      if (pitch != other__.pitch) return false;
+      if (roll != other__.roll) return false;
+      if (rpm != other__.rpm) return false;
+      if (rpmref != other__.rpmref) return false;
+      if (speed != other__.speed) return false;
+      if (speedref != other__.speedref) return false;
+      if (heading != other__.heading) return false;
+      if (headingrate != other__.headingrate) return false;
+      if (headingref != other__.headingref) return false;
+      if (missionstate != other__.missionstate) return false;
+      if (leg != other__.leg) return false;
+      return true;
+    }
+
+    int
+    ReconState::validate(void) const
+    {
+      return false;
+    }
+
+    uint8_t*
+    ReconState::serializeFields(uint8_t* bfr__) const
+    {
+      uint8_t* ptr__ = bfr__;
+      ptr__ += IMC::serialize(remotecontrolallowed, ptr__);
+      ptr__ += IMC::serialize(remotecontrolenabled, ptr__);
+      ptr__ += IMC::serialize(remotecontrolactive, ptr__);
+      ptr__ += IMC::serialize(depthonlycontrolenabled, ptr__);
+      ptr__ += IMC::serialize(directcontrolenabled, ptr__);
+      ptr__ += IMC::serialize(returntoclosestpointonline, ptr__);
+      ptr__ += IMC::serialize(onshorepower, ptr__);
+      ptr__ += IMC::serialize(latitude, ptr__);
+      ptr__ += IMC::serialize(longitude, ptr__);
+      ptr__ += IMC::serialize(depth, ptr__);
+      ptr__ += IMC::serialize(depthref, ptr__);
+      ptr__ += IMC::serialize(altitude, ptr__);
+      ptr__ += IMC::serialize(altituderef, ptr__);
+      ptr__ += IMC::serialize(pitch, ptr__);
+      ptr__ += IMC::serialize(roll, ptr__);
+      ptr__ += IMC::serialize(rpm, ptr__);
+      ptr__ += IMC::serialize(rpmref, ptr__);
+      ptr__ += IMC::serialize(speed, ptr__);
+      ptr__ += IMC::serialize(speedref, ptr__);
+      ptr__ += IMC::serialize(heading, ptr__);
+      ptr__ += IMC::serialize(headingrate, ptr__);
+      ptr__ += IMC::serialize(headingref, ptr__);
+      ptr__ += IMC::serialize(missionstate, ptr__);
+      ptr__ += IMC::serialize(leg, ptr__);
+      return ptr__;
+    }
+
+    uint16_t
+    ReconState::deserializeFields(const uint8_t* bfr__, uint16_t size__)
+    {
+      const uint8_t* start__ = bfr__;
+      bfr__ += IMC::deserialize(remotecontrolallowed, bfr__, size__);
+      bfr__ += IMC::deserialize(remotecontrolenabled, bfr__, size__);
+      bfr__ += IMC::deserialize(remotecontrolactive, bfr__, size__);
+      bfr__ += IMC::deserialize(depthonlycontrolenabled, bfr__, size__);
+      bfr__ += IMC::deserialize(directcontrolenabled, bfr__, size__);
+      bfr__ += IMC::deserialize(returntoclosestpointonline, bfr__, size__);
+      bfr__ += IMC::deserialize(onshorepower, bfr__, size__);
+      bfr__ += IMC::deserialize(latitude, bfr__, size__);
+      bfr__ += IMC::deserialize(longitude, bfr__, size__);
+      bfr__ += IMC::deserialize(depth, bfr__, size__);
+      bfr__ += IMC::deserialize(depthref, bfr__, size__);
+      bfr__ += IMC::deserialize(altitude, bfr__, size__);
+      bfr__ += IMC::deserialize(altituderef, bfr__, size__);
+      bfr__ += IMC::deserialize(pitch, bfr__, size__);
+      bfr__ += IMC::deserialize(roll, bfr__, size__);
+      bfr__ += IMC::deserialize(rpm, bfr__, size__);
+      bfr__ += IMC::deserialize(rpmref, bfr__, size__);
+      bfr__ += IMC::deserialize(speed, bfr__, size__);
+      bfr__ += IMC::deserialize(speedref, bfr__, size__);
+      bfr__ += IMC::deserialize(heading, bfr__, size__);
+      bfr__ += IMC::deserialize(headingrate, bfr__, size__);
+      bfr__ += IMC::deserialize(headingref, bfr__, size__);
+      bfr__ += IMC::deserialize(missionstate, bfr__, size__);
+      bfr__ += IMC::deserialize(leg, bfr__, size__);
+      return bfr__ - start__;
+    }
+
+    uint16_t
+    ReconState::reverseDeserializeFields(const uint8_t* bfr__, uint16_t size__)
+    {
+      const uint8_t* start__ = bfr__;
+      bfr__ += IMC::deserialize(remotecontrolallowed, bfr__, size__);
+      bfr__ += IMC::deserialize(remotecontrolenabled, bfr__, size__);
+      bfr__ += IMC::deserialize(remotecontrolactive, bfr__, size__);
+      bfr__ += IMC::deserialize(depthonlycontrolenabled, bfr__, size__);
+      bfr__ += IMC::deserialize(directcontrolenabled, bfr__, size__);
+      bfr__ += IMC::deserialize(returntoclosestpointonline, bfr__, size__);
+      bfr__ += IMC::deserialize(onshorepower, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(latitude, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(longitude, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(depth, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(depthref, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(altitude, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(altituderef, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(pitch, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(roll, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(rpm, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(rpmref, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(speed, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(speedref, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(heading, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(headingrate, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(headingref, bfr__, size__);
+      bfr__ += IMC::deserialize(missionstate, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(leg, bfr__, size__);
+      return bfr__ - start__;
+    }
+
+    void
+    ReconState::fieldsToJSON(std::ostream& os__, unsigned nindent__) const
+    {
+      IMC::toJSON(os__, "remotecontrolallowed", remotecontrolallowed, nindent__);
+      IMC::toJSON(os__, "remotecontrolenabled", remotecontrolenabled, nindent__);
+      IMC::toJSON(os__, "remotecontrolactive", remotecontrolactive, nindent__);
+      IMC::toJSON(os__, "depthonlycontrolenabled", depthonlycontrolenabled, nindent__);
+      IMC::toJSON(os__, "directcontrolenabled", directcontrolenabled, nindent__);
+      IMC::toJSON(os__, "returntoclosestpointonline", returntoclosestpointonline, nindent__);
+      IMC::toJSON(os__, "onshorepower", onshorepower, nindent__);
+      IMC::toJSON(os__, "latitude", latitude, nindent__);
+      IMC::toJSON(os__, "longitude", longitude, nindent__);
+      IMC::toJSON(os__, "depth", depth, nindent__);
+      IMC::toJSON(os__, "depthref", depthref, nindent__);
+      IMC::toJSON(os__, "altitude", altitude, nindent__);
+      IMC::toJSON(os__, "altituderef", altituderef, nindent__);
+      IMC::toJSON(os__, "pitch", pitch, nindent__);
+      IMC::toJSON(os__, "roll", roll, nindent__);
+      IMC::toJSON(os__, "rpm", rpm, nindent__);
+      IMC::toJSON(os__, "rpmref", rpmref, nindent__);
+      IMC::toJSON(os__, "speed", speed, nindent__);
+      IMC::toJSON(os__, "speedref", speedref, nindent__);
+      IMC::toJSON(os__, "heading", heading, nindent__);
+      IMC::toJSON(os__, "headingrate", headingrate, nindent__);
+      IMC::toJSON(os__, "headingref", headingref, nindent__);
+      IMC::toJSON(os__, "missionstate", missionstate, nindent__);
+      IMC::toJSON(os__, "leg", leg, nindent__);
+    }
+
+    ReconCommand::ReconCommand(void)
+    {
+      m_header.mgid = 902;
+      clear();
+    }
+
+    void
+    ReconCommand::clear(void)
+    {
+      name.clear();
+      arg1 = 0;
+      arg2 = 0;
+      arg3 = 0;
+      arg4 = 0;
+    }
+
+    bool
+    ReconCommand::fieldsEqual(const Message& msg__) const
+    {
+      const IMC::ReconCommand& other__ = static_cast<const ReconCommand&>(msg__);
+      if (name != other__.name) return false;
+      if (arg1 != other__.arg1) return false;
+      if (arg2 != other__.arg2) return false;
+      if (arg3 != other__.arg3) return false;
+      if (arg4 != other__.arg4) return false;
+      return true;
+    }
+
+    int
+    ReconCommand::validate(void) const
+    {
+      return false;
+    }
+
+    uint8_t*
+    ReconCommand::serializeFields(uint8_t* bfr__) const
+    {
+      uint8_t* ptr__ = bfr__;
+      ptr__ += IMC::serialize(name, ptr__);
+      ptr__ += IMC::serialize(arg1, ptr__);
+      ptr__ += IMC::serialize(arg2, ptr__);
+      ptr__ += IMC::serialize(arg3, ptr__);
+      ptr__ += IMC::serialize(arg4, ptr__);
+      return ptr__;
+    }
+
+    uint16_t
+    ReconCommand::deserializeFields(const uint8_t* bfr__, uint16_t size__)
+    {
+      const uint8_t* start__ = bfr__;
+      bfr__ += IMC::deserialize(name, bfr__, size__);
+      bfr__ += IMC::deserialize(arg1, bfr__, size__);
+      bfr__ += IMC::deserialize(arg2, bfr__, size__);
+      bfr__ += IMC::deserialize(arg3, bfr__, size__);
+      bfr__ += IMC::deserialize(arg4, bfr__, size__);
+      return bfr__ - start__;
+    }
+
+    uint16_t
+    ReconCommand::reverseDeserializeFields(const uint8_t* bfr__, uint16_t size__)
+    {
+      const uint8_t* start__ = bfr__;
+      bfr__ += IMC::reverseDeserialize(name, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(arg1, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(arg2, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(arg3, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(arg4, bfr__, size__);
+      return bfr__ - start__;
+    }
+
+    void
+    ReconCommand::fieldsToJSON(std::ostream& os__, unsigned nindent__) const
+    {
+      IMC::toJSON(os__, "name", name, nindent__);
+      IMC::toJSON(os__, "arg1", arg1, nindent__);
+      IMC::toJSON(os__, "arg2", arg2, nindent__);
+      IMC::toJSON(os__, "arg3", arg3, nindent__);
+      IMC::toJSON(os__, "arg4", arg4, nindent__);
+    }
+
+    DvlRanges::DvlRanges(void)
+    {
+      m_header.mgid = 903;
+      clear();
+    }
+
+    void
+    DvlRanges::clear(void)
+    {
+      range1 = 0;
+      range2 = 0;
+      range3 = 0;
+      range4 = 0;
+    }
+
+    bool
+    DvlRanges::fieldsEqual(const Message& msg__) const
+    {
+      const IMC::DvlRanges& other__ = static_cast<const DvlRanges&>(msg__);
+      if (range1 != other__.range1) return false;
+      if (range2 != other__.range2) return false;
+      if (range3 != other__.range3) return false;
+      if (range4 != other__.range4) return false;
+      return true;
+    }
+
+    int
+    DvlRanges::validate(void) const
+    {
+      return false;
+    }
+
+    uint8_t*
+    DvlRanges::serializeFields(uint8_t* bfr__) const
+    {
+      uint8_t* ptr__ = bfr__;
+      ptr__ += IMC::serialize(range1, ptr__);
+      ptr__ += IMC::serialize(range2, ptr__);
+      ptr__ += IMC::serialize(range3, ptr__);
+      ptr__ += IMC::serialize(range4, ptr__);
+      return ptr__;
+    }
+
+    uint16_t
+    DvlRanges::deserializeFields(const uint8_t* bfr__, uint16_t size__)
+    {
+      const uint8_t* start__ = bfr__;
+      bfr__ += IMC::deserialize(range1, bfr__, size__);
+      bfr__ += IMC::deserialize(range2, bfr__, size__);
+      bfr__ += IMC::deserialize(range3, bfr__, size__);
+      bfr__ += IMC::deserialize(range4, bfr__, size__);
+      return bfr__ - start__;
+    }
+
+    uint16_t
+    DvlRanges::reverseDeserializeFields(const uint8_t* bfr__, uint16_t size__)
+    {
+      const uint8_t* start__ = bfr__;
+      bfr__ += IMC::reverseDeserialize(range1, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(range2, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(range3, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(range4, bfr__, size__);
+      return bfr__ - start__;
+    }
+
+    void
+    DvlRanges::fieldsToJSON(std::ostream& os__, unsigned nindent__) const
+    {
+      IMC::toJSON(os__, "range1", range1, nindent__);
+      IMC::toJSON(os__, "range2", range2, nindent__);
+      IMC::toJSON(os__, "range3", range3, nindent__);
+      IMC::toJSON(os__, "range4", range4, nindent__);
     }
   }
 }

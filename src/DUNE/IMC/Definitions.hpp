@@ -26,7 +26,7 @@
 //***************************************************************************
 // Automatically generated.                                                 *
 //***************************************************************************
-// IMC XML MD5: bd24744a7b3932c3a956ddc60e9abdd6                            *
+// IMC XML MD5: c3528fa857ce5aff6aac284a0596293e                            *
 //***************************************************************************
 
 #ifndef DUNE_IMC_DEFINITIONS_HPP_INCLUDED_
@@ -19139,6 +19139,326 @@ namespace DUNE
       {
         return 0;
       }
+    };
+
+    //! Highpass Control Parcel.
+    class HighpassControlParcel: public Message
+    {
+    public:
+      //! Highpass Value.
+      fp32_t highpass;
+      //! Altitude rate of change.
+      fp32_t adot;
+      //! Slope Compensation.
+      fp32_t slope_compensation;
+      //! Slope Compensation Difference.
+      fp32_t slope_compensation_difference;
+      //! Altitude.
+      fp32_t altitude;
+      //! Auto Altitude.
+      fp32_t auto_altitude;
+
+      static uint16_t
+      getIdStatic(void)
+      {
+        return 900;
+      }
+
+      HighpassControlParcel(void);
+
+      Message*
+      clone(void) const
+      {
+        return new HighpassControlParcel(*this);
+      }
+
+      void
+      clear(void);
+
+      bool
+      fieldsEqual(const Message& msg__) const;
+
+      int
+      validate(void) const;
+
+      uint8_t*
+      serializeFields(uint8_t* bfr__) const;
+
+      uint16_t
+      deserializeFields(const uint8_t* bfr__, uint16_t size__);
+
+      uint16_t
+      reverseDeserializeFields(const uint8_t* bfr__, uint16_t size__);
+
+      uint16_t
+      getId(void) const
+      {
+        return HighpassControlParcel::getIdStatic();
+      }
+
+      const char*
+      getName(void) const
+      {
+        return "HighpassControlParcel";
+      }
+
+      unsigned
+      getFixedSerializationSize(void) const
+      {
+        return 24;
+      }
+
+      void
+      fieldsToJSON(std::ostream& os__, unsigned nindent__) const;
+    };
+
+    //! Recon State.
+    class ReconState: public Message
+    {
+    public:
+      //! Remote Control Allowed.
+      uint8_t remotecontrolallowed;
+      //! Remote Control Enabled.
+      uint8_t remotecontrolenabled;
+      //! Remote Control Active.
+      uint8_t remotecontrolactive;
+      //! Depth Only Control Enabled.
+      uint8_t depthonlycontrolenabled;
+      //! Direct Control Enabled.
+      uint8_t directcontrolenabled;
+      //! Return To Closest Point On Line.
+      uint8_t returntoclosestpointonline;
+      //! On Shore Power.
+      uint8_t onshorepower;
+      //! Latitude.
+      fp64_t latitude;
+      //! Longitude.
+      fp64_t longitude;
+      //! Depth.
+      fp64_t depth;
+      //! Depth Reference.
+      fp64_t depthref;
+      //! Altitude.
+      fp64_t altitude;
+      //! Altitude Reference.
+      fp64_t altituderef;
+      //! Pitch.
+      fp64_t pitch;
+      //! Roll.
+      fp64_t roll;
+      //! Rpm.
+      fp64_t rpm;
+      //! Rpm Reference.
+      fp64_t rpmref;
+      //! Speed.
+      fp64_t speed;
+      //! Speed Reference.
+      fp64_t speedref;
+      //! Heading.
+      fp64_t heading;
+      //! Heading Rate.
+      fp64_t headingrate;
+      //! Heading Reference.
+      fp64_t headingref;
+      //! Mission State.
+      uint8_t missionstate;
+      //! Leg.
+      int64_t leg;
+
+      static uint16_t
+      getIdStatic(void)
+      {
+        return 901;
+      }
+
+      ReconState(void);
+
+      Message*
+      clone(void) const
+      {
+        return new ReconState(*this);
+      }
+
+      void
+      clear(void);
+
+      bool
+      fieldsEqual(const Message& msg__) const;
+
+      int
+      validate(void) const;
+
+      uint8_t*
+      serializeFields(uint8_t* bfr__) const;
+
+      uint16_t
+      deserializeFields(const uint8_t* bfr__, uint16_t size__);
+
+      uint16_t
+      reverseDeserializeFields(const uint8_t* bfr__, uint16_t size__);
+
+      uint16_t
+      getId(void) const
+      {
+        return ReconState::getIdStatic();
+      }
+
+      const char*
+      getName(void) const
+      {
+        return "ReconState";
+      }
+
+      unsigned
+      getFixedSerializationSize(void) const
+      {
+        return 136;
+      }
+
+      void
+      fieldsToJSON(std::ostream& os__, unsigned nindent__) const;
+    };
+
+    //! Recon Command.
+    class ReconCommand: public Message
+    {
+    public:
+      //! Command Name.
+      std::string name;
+      //! Command Argument 1.
+      fp64_t arg1;
+      //! Command Argument 2.
+      fp64_t arg2;
+      //! Command Argument 3.
+      fp64_t arg3;
+      //! Command Argument 4.
+      fp64_t arg4;
+
+      static uint16_t
+      getIdStatic(void)
+      {
+        return 902;
+      }
+
+      ReconCommand(void);
+
+      Message*
+      clone(void) const
+      {
+        return new ReconCommand(*this);
+      }
+
+      void
+      clear(void);
+
+      bool
+      fieldsEqual(const Message& msg__) const;
+
+      int
+      validate(void) const;
+
+      uint8_t*
+      serializeFields(uint8_t* bfr__) const;
+
+      uint16_t
+      deserializeFields(const uint8_t* bfr__, uint16_t size__);
+
+      uint16_t
+      reverseDeserializeFields(const uint8_t* bfr__, uint16_t size__);
+
+      uint16_t
+      getId(void) const
+      {
+        return ReconCommand::getIdStatic();
+      }
+
+      const char*
+      getName(void) const
+      {
+        return "ReconCommand";
+      }
+
+      unsigned
+      getFixedSerializationSize(void) const
+      {
+        return 32;
+      }
+
+      unsigned
+      getVariableSerializationSize(void) const
+      {
+        return IMC::getSerializationSize(name);
+      }
+
+      void
+      fieldsToJSON(std::ostream& os__, unsigned nindent__) const;
+    };
+
+    //! DVL Ranges.
+    class DvlRanges: public Message
+    {
+    public:
+      //! Range 1.
+      fp32_t range1;
+      //! Range 2.
+      fp32_t range2;
+      //! Range 3.
+      fp32_t range3;
+      //! Range 4.
+      fp32_t range4;
+
+      static uint16_t
+      getIdStatic(void)
+      {
+        return 903;
+      }
+
+      DvlRanges(void);
+
+      Message*
+      clone(void) const
+      {
+        return new DvlRanges(*this);
+      }
+
+      void
+      clear(void);
+
+      bool
+      fieldsEqual(const Message& msg__) const;
+
+      int
+      validate(void) const;
+
+      uint8_t*
+      serializeFields(uint8_t* bfr__) const;
+
+      uint16_t
+      deserializeFields(const uint8_t* bfr__, uint16_t size__);
+
+      uint16_t
+      reverseDeserializeFields(const uint8_t* bfr__, uint16_t size__);
+
+      uint16_t
+      getId(void) const
+      {
+        return DvlRanges::getIdStatic();
+      }
+
+      const char*
+      getName(void) const
+      {
+        return "DvlRanges";
+      }
+
+      unsigned
+      getFixedSerializationSize(void) const
+      {
+        return 16;
+      }
+
+      void
+      fieldsToJSON(std::ostream& os__, unsigned nindent__) const;
     };
   }
 }
