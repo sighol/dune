@@ -26,7 +26,7 @@
 //***************************************************************************
 // Automatically generated.                                                 *
 //***************************************************************************
-// IMC XML MD5: c3528fa857ce5aff6aac284a0596293e                            *
+// IMC XML MD5: 30fb744948c3ce8801f71389a532fa9a                            *
 //***************************************************************************
 
 MESSAGE(1, EntityState)
@@ -272,4 +272,5 @@ MESSAGE(900, HighpassControlParcel)
 MESSAGE(901, ReconState)
 MESSAGE(902, ReconCommand)
 MESSAGE(903, DvlRanges)
+MESSAGE(904, ReconMessage)
 #undef MESSAGE

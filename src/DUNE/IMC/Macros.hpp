@@ -26,7 +26,7 @@
 //***************************************************************************
 // Automatically generated.                                                 *
 //***************************************************************************
-// IMC XML MD5: c3528fa857ce5aff6aac284a0596293e                            *
+// IMC XML MD5: 30fb744948c3ce8801f71389a532fa9a                            *
 //***************************************************************************
 
 #ifndef DUNE_IMC_MACROS_HPP_INCLUDED_
@@ -518,5 +518,7 @@
 #define DUNE_IMC_RECONCOMMAND 902
 //! DvlRanges identification number.
 #define DUNE_IMC_DVLRANGES 903
+//! ReconMessage identification number.
+#define DUNE_IMC_RECONMESSAGE 904
 
 #endif

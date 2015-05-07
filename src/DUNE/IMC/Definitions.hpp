@@ -26,7 +26,7 @@
 //***************************************************************************
 // Automatically generated.                                                 *
 //***************************************************************************
-// IMC XML MD5: c3528fa857ce5aff6aac284a0596293e                            *
+// IMC XML MD5: 30fb744948c3ce8801f71389a532fa9a                            *
 //***************************************************************************
 
 #ifndef DUNE_IMC_DEFINITIONS_HPP_INCLUDED_
@@ -19455,6 +19455,84 @@ namespace DUNE
       getFixedSerializationSize(void) const
       {
         return 16;
+      }
+
+      void
+      fieldsToJSON(std::ostream& os__, unsigned nindent__) const;
+    };
+
+    //! Recon Message.
+    class ReconMessage: public Message
+    {
+    public:
+      //! Direction.
+      enum DirectionEnum
+      {
+        //! Vehicle To External.
+        RC_VEHICLE_TO_EXTERNAL = 0x00,
+        //! External To Vehicle.
+        RC_EXTERNAL_TO_VEHICLE = 0x01
+      };
+
+      //! Message.
+      std::string msg;
+      //! Direction.
+      uint8_t direction;
+
+      static uint16_t
+      getIdStatic(void)
+      {
+        return 904;
+      }
+
+      ReconMessage(void);
+
+      Message*
+      clone(void) const
+      {
+        return new ReconMessage(*this);
+      }
+
+      void
+      clear(void);
+
+      bool
+      fieldsEqual(const Message& msg__) const;
+
+      int
+      validate(void) const;
+
+      uint8_t*
+      serializeFields(uint8_t* bfr__) const;
+
+      uint16_t
+      deserializeFields(const uint8_t* bfr__, uint16_t size__);
+
+      uint16_t
+      reverseDeserializeFields(const uint8_t* bfr__, uint16_t size__);
+
+      uint16_t
+      getId(void) const
+      {
+        return ReconMessage::getIdStatic();
+      }
+
+      const char*
+      getName(void) const
+      {
+        return "ReconMessage";
+      }
+
+      unsigned
+      getFixedSerializationSize(void) const
+      {
+        return 1;
+      }
+
+      unsigned
+      getVariableSerializationSize(void) const
+      {
+        return IMC::getSerializationSize(msg);
       }
 
       void

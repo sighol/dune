@@ -26,7 +26,7 @@
 //***************************************************************************
 // Automatically generated.                                                 *
 //***************************************************************************
-// IMC XML MD5: c3528fa857ce5aff6aac284a0596293e                            *
+// IMC XML MD5: 30fb744948c3ce8801f71389a532fa9a                            *
 //***************************************************************************
 
 // ISO C++ 98 headers.
@@ -20421,6 +20421,68 @@ namespace DUNE
       IMC::toJSON(os__, "range2", range2, nindent__);
       IMC::toJSON(os__, "range3", range3, nindent__);
       IMC::toJSON(os__, "range4", range4, nindent__);
+    }
+
+    ReconMessage::ReconMessage(void)
+    {
+      m_header.mgid = 904;
+      clear();
+    }
+
+    void
+    ReconMessage::clear(void)
+    {
+      msg.clear();
+      direction = 0;
+    }
+
+    bool
+    ReconMessage::fieldsEqual(const Message& msg__) const
+    {
+      const IMC::ReconMessage& other__ = static_cast<const ReconMessage&>(msg__);
+      if (msg != other__.msg) return false;
+      if (direction != other__.direction) return false;
+      return true;
+    }
+
+    int
+    ReconMessage::validate(void) const
+    {
+      return false;
+    }
+
+    uint8_t*
+    ReconMessage::serializeFields(uint8_t* bfr__) const
+    {
+      uint8_t* ptr__ = bfr__;
+      ptr__ += IMC::serialize(msg, ptr__);
+      ptr__ += IMC::serialize(direction, ptr__);
+      return ptr__;
+    }
+
+    uint16_t
+    ReconMessage::deserializeFields(const uint8_t* bfr__, uint16_t size__)
+    {
+      const uint8_t* start__ = bfr__;
+      bfr__ += IMC::deserialize(msg, bfr__, size__);
+      bfr__ += IMC::deserialize(direction, bfr__, size__);
+      return bfr__ - start__;
+    }
+
+    uint16_t
+    ReconMessage::reverseDeserializeFields(const uint8_t* bfr__, uint16_t size__)
+    {
+      const uint8_t* start__ = bfr__;
+      bfr__ += IMC::reverseDeserialize(msg, bfr__, size__);
+      bfr__ += IMC::deserialize(direction, bfr__, size__);
+      return bfr__ - start__;
+    }
+
+    void
+    ReconMessage::fieldsToJSON(std::ostream& os__, unsigned nindent__) const
+    {
+      IMC::toJSON(os__, "msg", msg, nindent__);
+      IMC::toJSON(os__, "direction", direction, nindent__);
     }
   }
 }
