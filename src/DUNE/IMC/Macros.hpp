@@ -26,7 +26,7 @@
 //***************************************************************************
 // Automatically generated.                                                 *
 //***************************************************************************
-// IMC XML MD5: 30fb744948c3ce8801f71389a532fa9a                            *
+// IMC XML MD5: 71460d645c7a3b246321254631cec2c6                            *
 //***************************************************************************
 
 #ifndef DUNE_IMC_MACROS_HPP_INCLUDED_
@@ -511,14 +511,16 @@
 //! GetParametersXml identification number.
 #define DUNE_IMC_GETPARAMETERSXML 894
 //! HighpassControlParcel identification number.
-#define DUNE_IMC_HIGHPASSCONTROLPARCEL 900
-//! ReconState identification number.
-#define DUNE_IMC_RECONSTATE 901
+#define DUNE_IMC_HIGHPASSCONTROLPARCEL 1900
+//! ReconStatus identification number.
+#define DUNE_IMC_RECONSTATUS 1901
 //! ReconCommand identification number.
-#define DUNE_IMC_RECONCOMMAND 902
+#define DUNE_IMC_RECONCOMMAND 1902
 //! DvlRanges identification number.
-#define DUNE_IMC_DVLRANGES 903
+#define DUNE_IMC_DVLRANGES 1903
 //! ReconMessage identification number.
-#define DUNE_IMC_RECONMESSAGE 904
+#define DUNE_IMC_RECONMESSAGE 1904
+//! ReconControlState identification number.
+#define DUNE_IMC_RECONCONTROLSTATE 1905
 
 #endif

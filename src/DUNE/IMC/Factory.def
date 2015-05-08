@@ -26,7 +26,7 @@
 //***************************************************************************
 // Automatically generated.                                                 *
 //***************************************************************************
-// IMC XML MD5: 30fb744948c3ce8801f71389a532fa9a                            *
+// IMC XML MD5: 71460d645c7a3b246321254631cec2c6                            *
 //***************************************************************************
 
 MESSAGE(1, EntityState)
@@ -268,9 +268,10 @@ MESSAGE(891, UsblPosition)
 MESSAGE(892, UsblFix)
 MESSAGE(893, ParametersXml)
 MESSAGE(894, GetParametersXml)
-MESSAGE(900, HighpassControlParcel)
-MESSAGE(901, ReconState)
-MESSAGE(902, ReconCommand)
-MESSAGE(903, DvlRanges)
-MESSAGE(904, ReconMessage)
+MESSAGE(1900, HighpassControlParcel)
+MESSAGE(1901, ReconStatus)
+MESSAGE(1902, ReconCommand)
+MESSAGE(1903, DvlRanges)
+MESSAGE(1904, ReconMessage)
+MESSAGE(1905, ReconControlState)
 #undef MESSAGE

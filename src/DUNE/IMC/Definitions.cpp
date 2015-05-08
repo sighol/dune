@@ -26,7 +26,7 @@
 //***************************************************************************
 // Automatically generated.                                                 *
 //***************************************************************************
-// IMC XML MD5: 30fb744948c3ce8801f71389a532fa9a                            *
+// IMC XML MD5: 71460d645c7a3b246321254631cec2c6                            *
 //***************************************************************************
 
 // ISO C++ 98 headers.
@@ -19991,7 +19991,7 @@ namespace DUNE
 
     HighpassControlParcel::HighpassControlParcel(void)
     {
-      m_header.mgid = 900;
+      m_header.mgid = 1900;
       clear();
     }
 
@@ -20075,203 +20075,203 @@ namespace DUNE
       IMC::toJSON(os__, "auto_altitude", auto_altitude, nindent__);
     }
 
-    ReconState::ReconState(void)
+    ReconStatus::ReconStatus(void)
     {
-      m_header.mgid = 901;
+      m_header.mgid = 1901;
       clear();
     }
 
     void
-    ReconState::clear(void)
+    ReconStatus::clear(void)
     {
-      remotecontrolallowed = 0;
-      remotecontrolenabled = 0;
-      remotecontrolactive = 0;
-      depthonlycontrolenabled = 0;
-      directcontrolenabled = 0;
-      returntoclosestpointonline = 0;
-      onshorepower = 0;
+      remote_control_allowed = 0;
+      remote_control_enabled = 0;
+      remote_control_active = 0;
+      depth_only_control_enabled = 0;
+      direct_control_enabled = 0;
+      return_to_closest_point_on_line = 0;
+      on_shore_power = 0;
       latitude = 0;
       longitude = 0;
       depth = 0;
-      depthref = 0;
+      depth_ref = 0;
       altitude = 0;
-      altituderef = 0;
+      altitude_ref = 0;
       pitch = 0;
       roll = 0;
       rpm = 0;
-      rpmref = 0;
+      rpm_ref = 0;
       speed = 0;
-      speedref = 0;
+      speed_ref = 0;
       heading = 0;
-      headingrate = 0;
-      headingref = 0;
-      missionstate = 0;
+      heading_rate = 0;
+      heading_ref = 0;
+      mission_state = 0;
       leg = 0;
     }
 
     bool
-    ReconState::fieldsEqual(const Message& msg__) const
+    ReconStatus::fieldsEqual(const Message& msg__) const
     {
-      const IMC::ReconState& other__ = static_cast<const ReconState&>(msg__);
-      if (remotecontrolallowed != other__.remotecontrolallowed) return false;
-      if (remotecontrolenabled != other__.remotecontrolenabled) return false;
-      if (remotecontrolactive != other__.remotecontrolactive) return false;
-      if (depthonlycontrolenabled != other__.depthonlycontrolenabled) return false;
-      if (directcontrolenabled != other__.directcontrolenabled) return false;
-      if (returntoclosestpointonline != other__.returntoclosestpointonline) return false;
-      if (onshorepower != other__.onshorepower) return false;
+      const IMC::ReconStatus& other__ = static_cast<const ReconStatus&>(msg__);
+      if (remote_control_allowed != other__.remote_control_allowed) return false;
+      if (remote_control_enabled != other__.remote_control_enabled) return false;
+      if (remote_control_active != other__.remote_control_active) return false;
+      if (depth_only_control_enabled != other__.depth_only_control_enabled) return false;
+      if (direct_control_enabled != other__.direct_control_enabled) return false;
+      if (return_to_closest_point_on_line != other__.return_to_closest_point_on_line) return false;
+      if (on_shore_power != other__.on_shore_power) return false;
       if (latitude != other__.latitude) return false;
       if (longitude != other__.longitude) return false;
       if (depth != other__.depth) return false;
-      if (depthref != other__.depthref) return false;
+      if (depth_ref != other__.depth_ref) return false;
       if (altitude != other__.altitude) return false;
-      if (altituderef != other__.altituderef) return false;
+      if (altitude_ref != other__.altitude_ref) return false;
       if (pitch != other__.pitch) return false;
       if (roll != other__.roll) return false;
       if (rpm != other__.rpm) return false;
-      if (rpmref != other__.rpmref) return false;
+      if (rpm_ref != other__.rpm_ref) return false;
       if (speed != other__.speed) return false;
-      if (speedref != other__.speedref) return false;
+      if (speed_ref != other__.speed_ref) return false;
       if (heading != other__.heading) return false;
-      if (headingrate != other__.headingrate) return false;
-      if (headingref != other__.headingref) return false;
-      if (missionstate != other__.missionstate) return false;
+      if (heading_rate != other__.heading_rate) return false;
+      if (heading_ref != other__.heading_ref) return false;
+      if (mission_state != other__.mission_state) return false;
       if (leg != other__.leg) return false;
       return true;
     }
 
     int
-    ReconState::validate(void) const
+    ReconStatus::validate(void) const
     {
       return false;
     }
 
     uint8_t*
-    ReconState::serializeFields(uint8_t* bfr__) const
+    ReconStatus::serializeFields(uint8_t* bfr__) const
     {
       uint8_t* ptr__ = bfr__;
-      ptr__ += IMC::serialize(remotecontrolallowed, ptr__);
-      ptr__ += IMC::serialize(remotecontrolenabled, ptr__);
-      ptr__ += IMC::serialize(remotecontrolactive, ptr__);
-      ptr__ += IMC::serialize(depthonlycontrolenabled, ptr__);
-      ptr__ += IMC::serialize(directcontrolenabled, ptr__);
-      ptr__ += IMC::serialize(returntoclosestpointonline, ptr__);
-      ptr__ += IMC::serialize(onshorepower, ptr__);
+      ptr__ += IMC::serialize(remote_control_allowed, ptr__);
+      ptr__ += IMC::serialize(remote_control_enabled, ptr__);
+      ptr__ += IMC::serialize(remote_control_active, ptr__);
+      ptr__ += IMC::serialize(depth_only_control_enabled, ptr__);
+      ptr__ += IMC::serialize(direct_control_enabled, ptr__);
+      ptr__ += IMC::serialize(return_to_closest_point_on_line, ptr__);
+      ptr__ += IMC::serialize(on_shore_power, ptr__);
       ptr__ += IMC::serialize(latitude, ptr__);
       ptr__ += IMC::serialize(longitude, ptr__);
       ptr__ += IMC::serialize(depth, ptr__);
-      ptr__ += IMC::serialize(depthref, ptr__);
+      ptr__ += IMC::serialize(depth_ref, ptr__);
       ptr__ += IMC::serialize(altitude, ptr__);
-      ptr__ += IMC::serialize(altituderef, ptr__);
+      ptr__ += IMC::serialize(altitude_ref, ptr__);
       ptr__ += IMC::serialize(pitch, ptr__);
       ptr__ += IMC::serialize(roll, ptr__);
       ptr__ += IMC::serialize(rpm, ptr__);
-      ptr__ += IMC::serialize(rpmref, ptr__);
+      ptr__ += IMC::serialize(rpm_ref, ptr__);
       ptr__ += IMC::serialize(speed, ptr__);
-      ptr__ += IMC::serialize(speedref, ptr__);
+      ptr__ += IMC::serialize(speed_ref, ptr__);
       ptr__ += IMC::serialize(heading, ptr__);
-      ptr__ += IMC::serialize(headingrate, ptr__);
-      ptr__ += IMC::serialize(headingref, ptr__);
-      ptr__ += IMC::serialize(missionstate, ptr__);
+      ptr__ += IMC::serialize(heading_rate, ptr__);
+      ptr__ += IMC::serialize(heading_ref, ptr__);
+      ptr__ += IMC::serialize(mission_state, ptr__);
       ptr__ += IMC::serialize(leg, ptr__);
       return ptr__;
     }
 
     uint16_t
-    ReconState::deserializeFields(const uint8_t* bfr__, uint16_t size__)
+    ReconStatus::deserializeFields(const uint8_t* bfr__, uint16_t size__)
     {
       const uint8_t* start__ = bfr__;
-      bfr__ += IMC::deserialize(remotecontrolallowed, bfr__, size__);
-      bfr__ += IMC::deserialize(remotecontrolenabled, bfr__, size__);
-      bfr__ += IMC::deserialize(remotecontrolactive, bfr__, size__);
-      bfr__ += IMC::deserialize(depthonlycontrolenabled, bfr__, size__);
-      bfr__ += IMC::deserialize(directcontrolenabled, bfr__, size__);
-      bfr__ += IMC::deserialize(returntoclosestpointonline, bfr__, size__);
-      bfr__ += IMC::deserialize(onshorepower, bfr__, size__);
+      bfr__ += IMC::deserialize(remote_control_allowed, bfr__, size__);
+      bfr__ += IMC::deserialize(remote_control_enabled, bfr__, size__);
+      bfr__ += IMC::deserialize(remote_control_active, bfr__, size__);
+      bfr__ += IMC::deserialize(depth_only_control_enabled, bfr__, size__);
+      bfr__ += IMC::deserialize(direct_control_enabled, bfr__, size__);
+      bfr__ += IMC::deserialize(return_to_closest_point_on_line, bfr__, size__);
+      bfr__ += IMC::deserialize(on_shore_power, bfr__, size__);
       bfr__ += IMC::deserialize(latitude, bfr__, size__);
       bfr__ += IMC::deserialize(longitude, bfr__, size__);
       bfr__ += IMC::deserialize(depth, bfr__, size__);
-      bfr__ += IMC::deserialize(depthref, bfr__, size__);
+      bfr__ += IMC::deserialize(depth_ref, bfr__, size__);
       bfr__ += IMC::deserialize(altitude, bfr__, size__);
-      bfr__ += IMC::deserialize(altituderef, bfr__, size__);
+      bfr__ += IMC::deserialize(altitude_ref, bfr__, size__);
       bfr__ += IMC::deserialize(pitch, bfr__, size__);
       bfr__ += IMC::deserialize(roll, bfr__, size__);
       bfr__ += IMC::deserialize(rpm, bfr__, size__);
-      bfr__ += IMC::deserialize(rpmref, bfr__, size__);
+      bfr__ += IMC::deserialize(rpm_ref, bfr__, size__);
       bfr__ += IMC::deserialize(speed, bfr__, size__);
-      bfr__ += IMC::deserialize(speedref, bfr__, size__);
+      bfr__ += IMC::deserialize(speed_ref, bfr__, size__);
       bfr__ += IMC::deserialize(heading, bfr__, size__);
-      bfr__ += IMC::deserialize(headingrate, bfr__, size__);
-      bfr__ += IMC::deserialize(headingref, bfr__, size__);
-      bfr__ += IMC::deserialize(missionstate, bfr__, size__);
+      bfr__ += IMC::deserialize(heading_rate, bfr__, size__);
+      bfr__ += IMC::deserialize(heading_ref, bfr__, size__);
+      bfr__ += IMC::deserialize(mission_state, bfr__, size__);
       bfr__ += IMC::deserialize(leg, bfr__, size__);
       return bfr__ - start__;
     }
 
     uint16_t
-    ReconState::reverseDeserializeFields(const uint8_t* bfr__, uint16_t size__)
+    ReconStatus::reverseDeserializeFields(const uint8_t* bfr__, uint16_t size__)
     {
       const uint8_t* start__ = bfr__;
-      bfr__ += IMC::deserialize(remotecontrolallowed, bfr__, size__);
-      bfr__ += IMC::deserialize(remotecontrolenabled, bfr__, size__);
-      bfr__ += IMC::deserialize(remotecontrolactive, bfr__, size__);
-      bfr__ += IMC::deserialize(depthonlycontrolenabled, bfr__, size__);
-      bfr__ += IMC::deserialize(directcontrolenabled, bfr__, size__);
-      bfr__ += IMC::deserialize(returntoclosestpointonline, bfr__, size__);
-      bfr__ += IMC::deserialize(onshorepower, bfr__, size__);
+      bfr__ += IMC::deserialize(remote_control_allowed, bfr__, size__);
+      bfr__ += IMC::deserialize(remote_control_enabled, bfr__, size__);
+      bfr__ += IMC::deserialize(remote_control_active, bfr__, size__);
+      bfr__ += IMC::deserialize(depth_only_control_enabled, bfr__, size__);
+      bfr__ += IMC::deserialize(direct_control_enabled, bfr__, size__);
+      bfr__ += IMC::deserialize(return_to_closest_point_on_line, bfr__, size__);
+      bfr__ += IMC::deserialize(on_shore_power, bfr__, size__);
       bfr__ += IMC::reverseDeserialize(latitude, bfr__, size__);
       bfr__ += IMC::reverseDeserialize(longitude, bfr__, size__);
       bfr__ += IMC::reverseDeserialize(depth, bfr__, size__);
-      bfr__ += IMC::reverseDeserialize(depthref, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(depth_ref, bfr__, size__);
       bfr__ += IMC::reverseDeserialize(altitude, bfr__, size__);
-      bfr__ += IMC::reverseDeserialize(altituderef, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(altitude_ref, bfr__, size__);
       bfr__ += IMC::reverseDeserialize(pitch, bfr__, size__);
       bfr__ += IMC::reverseDeserialize(roll, bfr__, size__);
       bfr__ += IMC::reverseDeserialize(rpm, bfr__, size__);
-      bfr__ += IMC::reverseDeserialize(rpmref, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(rpm_ref, bfr__, size__);
       bfr__ += IMC::reverseDeserialize(speed, bfr__, size__);
-      bfr__ += IMC::reverseDeserialize(speedref, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(speed_ref, bfr__, size__);
       bfr__ += IMC::reverseDeserialize(heading, bfr__, size__);
-      bfr__ += IMC::reverseDeserialize(headingrate, bfr__, size__);
-      bfr__ += IMC::reverseDeserialize(headingref, bfr__, size__);
-      bfr__ += IMC::deserialize(missionstate, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(heading_rate, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(heading_ref, bfr__, size__);
+      bfr__ += IMC::deserialize(mission_state, bfr__, size__);
       bfr__ += IMC::reverseDeserialize(leg, bfr__, size__);
       return bfr__ - start__;
     }
 
     void
-    ReconState::fieldsToJSON(std::ostream& os__, unsigned nindent__) const
+    ReconStatus::fieldsToJSON(std::ostream& os__, unsigned nindent__) const
     {
-      IMC::toJSON(os__, "remotecontrolallowed", remotecontrolallowed, nindent__);
-      IMC::toJSON(os__, "remotecontrolenabled", remotecontrolenabled, nindent__);
-      IMC::toJSON(os__, "remotecontrolactive", remotecontrolactive, nindent__);
-      IMC::toJSON(os__, "depthonlycontrolenabled", depthonlycontrolenabled, nindent__);
-      IMC::toJSON(os__, "directcontrolenabled", directcontrolenabled, nindent__);
-      IMC::toJSON(os__, "returntoclosestpointonline", returntoclosestpointonline, nindent__);
-      IMC::toJSON(os__, "onshorepower", onshorepower, nindent__);
+      IMC::toJSON(os__, "remote_control_allowed", remote_control_allowed, nindent__);
+      IMC::toJSON(os__, "remote_control_enabled", remote_control_enabled, nindent__);
+      IMC::toJSON(os__, "remote_control_active", remote_control_active, nindent__);
+      IMC::toJSON(os__, "depth_only_control_enabled", depth_only_control_enabled, nindent__);
+      IMC::toJSON(os__, "direct_control_enabled", direct_control_enabled, nindent__);
+      IMC::toJSON(os__, "return_to_closest_point_on_line", return_to_closest_point_on_line, nindent__);
+      IMC::toJSON(os__, "on_shore_power", on_shore_power, nindent__);
       IMC::toJSON(os__, "latitude", latitude, nindent__);
       IMC::toJSON(os__, "longitude", longitude, nindent__);
       IMC::toJSON(os__, "depth", depth, nindent__);
-      IMC::toJSON(os__, "depthref", depthref, nindent__);
+      IMC::toJSON(os__, "depth_ref", depth_ref, nindent__);
       IMC::toJSON(os__, "altitude", altitude, nindent__);
-      IMC::toJSON(os__, "altituderef", altituderef, nindent__);
+      IMC::toJSON(os__, "altitude_ref", altitude_ref, nindent__);
       IMC::toJSON(os__, "pitch", pitch, nindent__);
       IMC::toJSON(os__, "roll", roll, nindent__);
       IMC::toJSON(os__, "rpm", rpm, nindent__);
-      IMC::toJSON(os__, "rpmref", rpmref, nindent__);
+      IMC::toJSON(os__, "rpm_ref", rpm_ref, nindent__);
       IMC::toJSON(os__, "speed", speed, nindent__);
-      IMC::toJSON(os__, "speedref", speedref, nindent__);
+      IMC::toJSON(os__, "speed_ref", speed_ref, nindent__);
       IMC::toJSON(os__, "heading", heading, nindent__);
-      IMC::toJSON(os__, "headingrate", headingrate, nindent__);
-      IMC::toJSON(os__, "headingref", headingref, nindent__);
-      IMC::toJSON(os__, "missionstate", missionstate, nindent__);
+      IMC::toJSON(os__, "heading_rate", heading_rate, nindent__);
+      IMC::toJSON(os__, "heading_ref", heading_ref, nindent__);
+      IMC::toJSON(os__, "mission_state", mission_state, nindent__);
       IMC::toJSON(os__, "leg", leg, nindent__);
     }
 
     ReconCommand::ReconCommand(void)
     {
-      m_header.mgid = 902;
+      m_header.mgid = 1902;
       clear();
     }
 
@@ -20351,13 +20351,14 @@ namespace DUNE
 
     DvlRanges::DvlRanges(void)
     {
-      m_header.mgid = 903;
+      m_header.mgid = 1903;
       clear();
     }
 
     void
     DvlRanges::clear(void)
     {
+      direction = 0;
       range1 = 0;
       range2 = 0;
       range3 = 0;
@@ -20368,6 +20369,7 @@ namespace DUNE
     DvlRanges::fieldsEqual(const Message& msg__) const
     {
       const IMC::DvlRanges& other__ = static_cast<const DvlRanges&>(msg__);
+      if (direction != other__.direction) return false;
       if (range1 != other__.range1) return false;
       if (range2 != other__.range2) return false;
       if (range3 != other__.range3) return false;
@@ -20385,6 +20387,7 @@ namespace DUNE
     DvlRanges::serializeFields(uint8_t* bfr__) const
     {
       uint8_t* ptr__ = bfr__;
+      ptr__ += IMC::serialize(direction, ptr__);
       ptr__ += IMC::serialize(range1, ptr__);
       ptr__ += IMC::serialize(range2, ptr__);
       ptr__ += IMC::serialize(range3, ptr__);
@@ -20396,6 +20399,7 @@ namespace DUNE
     DvlRanges::deserializeFields(const uint8_t* bfr__, uint16_t size__)
     {
       const uint8_t* start__ = bfr__;
+      bfr__ += IMC::deserialize(direction, bfr__, size__);
       bfr__ += IMC::deserialize(range1, bfr__, size__);
       bfr__ += IMC::deserialize(range2, bfr__, size__);
       bfr__ += IMC::deserialize(range3, bfr__, size__);
@@ -20407,6 +20411,7 @@ namespace DUNE
     DvlRanges::reverseDeserializeFields(const uint8_t* bfr__, uint16_t size__)
     {
       const uint8_t* start__ = bfr__;
+      bfr__ += IMC::deserialize(direction, bfr__, size__);
       bfr__ += IMC::reverseDeserialize(range1, bfr__, size__);
       bfr__ += IMC::reverseDeserialize(range2, bfr__, size__);
       bfr__ += IMC::reverseDeserialize(range3, bfr__, size__);
@@ -20417,6 +20422,7 @@ namespace DUNE
     void
     DvlRanges::fieldsToJSON(std::ostream& os__, unsigned nindent__) const
     {
+      IMC::toJSON(os__, "direction", direction, nindent__);
       IMC::toJSON(os__, "range1", range1, nindent__);
       IMC::toJSON(os__, "range2", range2, nindent__);
       IMC::toJSON(os__, "range3", range3, nindent__);
@@ -20425,7 +20431,7 @@ namespace DUNE
 
     ReconMessage::ReconMessage(void)
     {
-      m_header.mgid = 904;
+      m_header.mgid = 1904;
       clear();
     }
 
@@ -20483,6 +20489,62 @@ namespace DUNE
     {
       IMC::toJSON(os__, "msg", msg, nindent__);
       IMC::toJSON(os__, "direction", direction, nindent__);
+    }
+
+    ReconControlState::ReconControlState(void)
+    {
+      m_header.mgid = 1905;
+      clear();
+    }
+
+    void
+    ReconControlState::clear(void)
+    {
+      state = 0;
+    }
+
+    bool
+    ReconControlState::fieldsEqual(const Message& msg__) const
+    {
+      const IMC::ReconControlState& other__ = static_cast<const ReconControlState&>(msg__);
+      if (state != other__.state) return false;
+      return true;
+    }
+
+    int
+    ReconControlState::validate(void) const
+    {
+      return false;
+    }
+
+    uint8_t*
+    ReconControlState::serializeFields(uint8_t* bfr__) const
+    {
+      uint8_t* ptr__ = bfr__;
+      ptr__ += IMC::serialize(state, ptr__);
+      return ptr__;
+    }
+
+    uint16_t
+    ReconControlState::deserializeFields(const uint8_t* bfr__, uint16_t size__)
+    {
+      const uint8_t* start__ = bfr__;
+      bfr__ += IMC::deserialize(state, bfr__, size__);
+      return bfr__ - start__;
+    }
+
+    uint16_t
+    ReconControlState::reverseDeserializeFields(const uint8_t* bfr__, uint16_t size__)
+    {
+      const uint8_t* start__ = bfr__;
+      bfr__ += IMC::deserialize(state, bfr__, size__);
+      return bfr__ - start__;
+    }
+
+    void
+    ReconControlState::fieldsToJSON(std::ostream& os__, unsigned nindent__) const
+    {
+      IMC::toJSON(os__, "state", state, nindent__);
     }
   }
 }

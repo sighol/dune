@@ -26,7 +26,7 @@
 //***************************************************************************
 // Automatically generated.                                                 *
 //***************************************************************************
-// IMC XML MD5: 30fb744948c3ce8801f71389a532fa9a                            *
+// IMC XML MD5: 71460d645c7a3b246321254631cec2c6                            *
 //***************************************************************************
 
 #ifndef DUNE_IMC_DEFINITIONS_HPP_INCLUDED_
@@ -19161,7 +19161,7 @@ namespace DUNE
       static uint16_t
       getIdStatic(void)
       {
-        return 900;
+        return 1900;
       }
 
       HighpassControlParcel(void);
@@ -19212,24 +19212,24 @@ namespace DUNE
       fieldsToJSON(std::ostream& os__, unsigned nindent__) const;
     };
 
-    //! Recon State.
-    class ReconState: public Message
+    //! Recon Status.
+    class ReconStatus: public Message
     {
     public:
       //! Remote Control Allowed.
-      uint8_t remotecontrolallowed;
+      uint8_t remote_control_allowed;
       //! Remote Control Enabled.
-      uint8_t remotecontrolenabled;
+      uint8_t remote_control_enabled;
       //! Remote Control Active.
-      uint8_t remotecontrolactive;
+      uint8_t remote_control_active;
       //! Depth Only Control Enabled.
-      uint8_t depthonlycontrolenabled;
+      uint8_t depth_only_control_enabled;
       //! Direct Control Enabled.
-      uint8_t directcontrolenabled;
+      uint8_t direct_control_enabled;
       //! Return To Closest Point On Line.
-      uint8_t returntoclosestpointonline;
+      uint8_t return_to_closest_point_on_line;
       //! On Shore Power.
-      uint8_t onshorepower;
+      uint8_t on_shore_power;
       //! Latitude.
       fp64_t latitude;
       //! Longitude.
@@ -19237,11 +19237,11 @@ namespace DUNE
       //! Depth.
       fp64_t depth;
       //! Depth Reference.
-      fp64_t depthref;
+      fp64_t depth_ref;
       //! Altitude.
       fp64_t altitude;
       //! Altitude Reference.
-      fp64_t altituderef;
+      fp64_t altitude_ref;
       //! Pitch.
       fp64_t pitch;
       //! Roll.
@@ -19249,34 +19249,34 @@ namespace DUNE
       //! Rpm.
       fp64_t rpm;
       //! Rpm Reference.
-      fp64_t rpmref;
+      fp64_t rpm_ref;
       //! Speed.
       fp64_t speed;
       //! Speed Reference.
-      fp64_t speedref;
+      fp64_t speed_ref;
       //! Heading.
       fp64_t heading;
       //! Heading Rate.
-      fp64_t headingrate;
+      fp64_t heading_rate;
       //! Heading Reference.
-      fp64_t headingref;
+      fp64_t heading_ref;
       //! Mission State.
-      uint8_t missionstate;
+      uint8_t mission_state;
       //! Leg.
       int64_t leg;
 
       static uint16_t
       getIdStatic(void)
       {
-        return 901;
+        return 1901;
       }
 
-      ReconState(void);
+      ReconStatus(void);
 
       Message*
       clone(void) const
       {
-        return new ReconState(*this);
+        return new ReconStatus(*this);
       }
 
       void
@@ -19300,13 +19300,13 @@ namespace DUNE
       uint16_t
       getId(void) const
       {
-        return ReconState::getIdStatic();
+        return ReconStatus::getIdStatic();
       }
 
       const char*
       getName(void) const
       {
-        return "ReconState";
+        return "ReconStatus";
       }
 
       unsigned
@@ -19337,7 +19337,7 @@ namespace DUNE
       static uint16_t
       getIdStatic(void)
       {
-        return 902;
+        return 1902;
       }
 
       ReconCommand(void);
@@ -19398,6 +19398,17 @@ namespace DUNE
     class DvlRanges: public Message
     {
     public:
+      //! Direction.
+      enum DirectionEnum
+      {
+        //! Up.
+        DR_up = 0x00,
+        //! Down.
+        DR_down = 0x01
+      };
+
+      //! Direction.
+      uint8_t direction;
       //! Range 1.
       fp32_t range1;
       //! Range 2.
@@ -19410,7 +19421,7 @@ namespace DUNE
       static uint16_t
       getIdStatic(void)
       {
-        return 903;
+        return 1903;
       }
 
       DvlRanges(void);
@@ -19454,7 +19465,7 @@ namespace DUNE
       unsigned
       getFixedSerializationSize(void) const
       {
-        return 16;
+        return 17;
       }
 
       void
@@ -19482,7 +19493,7 @@ namespace DUNE
       static uint16_t
       getIdStatic(void)
       {
-        return 904;
+        return 1904;
       }
 
       ReconMessage(void);
@@ -19533,6 +19544,76 @@ namespace DUNE
       getVariableSerializationSize(void) const
       {
         return IMC::getSerializationSize(msg);
+      }
+
+      void
+      fieldsToJSON(std::ostream& os__, unsigned nindent__) const;
+    };
+
+    //! Recon Control State.
+    class ReconControlState: public Message
+    {
+    public:
+      //! State.
+      enum StateEnum
+      {
+        //! Enabled.
+        RCS_ENABLED = 0,
+        //! Disabled.
+        RCS_DISABLED = 1
+      };
+
+      //! State.
+      uint8_t state;
+
+      static uint16_t
+      getIdStatic(void)
+      {
+        return 1905;
+      }
+
+      ReconControlState(void);
+
+      Message*
+      clone(void) const
+      {
+        return new ReconControlState(*this);
+      }
+
+      void
+      clear(void);
+
+      bool
+      fieldsEqual(const Message& msg__) const;
+
+      int
+      validate(void) const;
+
+      uint8_t*
+      serializeFields(uint8_t* bfr__) const;
+
+      uint16_t
+      deserializeFields(const uint8_t* bfr__, uint16_t size__);
+
+      uint16_t
+      reverseDeserializeFields(const uint8_t* bfr__, uint16_t size__);
+
+      uint16_t
+      getId(void) const
+      {
+        return ReconControlState::getIdStatic();
+      }
+
+      const char*
+      getName(void) const
+      {
+        return "ReconControlState";
+      }
+
+      unsigned
+      getFixedSerializationSize(void) const
+      {
+        return 1;
       }
 
       void
