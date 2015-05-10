@@ -26,7 +26,7 @@
 //***************************************************************************
 // Automatically generated.                                                 *
 //***************************************************************************
-// IMC XML MD5: 71460d645c7a3b246321254631cec2c6                            *
+// IMC XML MD5: dd186813efb490ac251f1633db2ebf3a                            *
 //***************************************************************************
 
 #ifndef DUNE_IMC_DEFINITIONS_HPP_INCLUDED_
@@ -19614,6 +19614,91 @@ namespace DUNE
       getFixedSerializationSize(void) const
       {
         return 1;
+      }
+
+      void
+      fieldsToJSON(std::ostream& os__, unsigned nindent__) const;
+    };
+
+    //! Adot Debud.
+    class AdotDebug: public Message
+    {
+    public:
+      //! dt.
+      fp64_t dt;
+      //! k_d.
+      fp64_t k_d;
+      //! range1.
+      fp64_t range1;
+      //! range2.
+      fp64_t range2;
+      //! range3.
+      fp64_t range3;
+      //! range4.
+      fp64_t range4;
+      //! u.
+      fp64_t u;
+      //! v.
+      fp64_t v;
+      //! w.
+      fp64_t w;
+      //! phi.
+      fp64_t phi;
+      //! theta.
+      fp64_t theta;
+      //! psi.
+      fp64_t psi;
+      //! adot.
+      fp64_t adot;
+
+      static uint16_t
+      getIdStatic(void)
+      {
+        return 1910;
+      }
+
+      AdotDebug(void);
+
+      Message*
+      clone(void) const
+      {
+        return new AdotDebug(*this);
+      }
+
+      void
+      clear(void);
+
+      bool
+      fieldsEqual(const Message& msg__) const;
+
+      int
+      validate(void) const;
+
+      uint8_t*
+      serializeFields(uint8_t* bfr__) const;
+
+      uint16_t
+      deserializeFields(const uint8_t* bfr__, uint16_t size__);
+
+      uint16_t
+      reverseDeserializeFields(const uint8_t* bfr__, uint16_t size__);
+
+      uint16_t
+      getId(void) const
+      {
+        return AdotDebug::getIdStatic();
+      }
+
+      const char*
+      getName(void) const
+      {
+        return "AdotDebug";
+      }
+
+      unsigned
+      getFixedSerializationSize(void) const
+      {
+        return 104;
       }
 
       void

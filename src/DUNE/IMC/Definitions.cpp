@@ -26,7 +26,7 @@
 //***************************************************************************
 // Automatically generated.                                                 *
 //***************************************************************************
-// IMC XML MD5: 71460d645c7a3b246321254631cec2c6                            *
+// IMC XML MD5: dd186813efb490ac251f1633db2ebf3a                            *
 //***************************************************************************
 
 // ISO C++ 98 headers.
@@ -20545,6 +20545,134 @@ namespace DUNE
     ReconControlState::fieldsToJSON(std::ostream& os__, unsigned nindent__) const
     {
       IMC::toJSON(os__, "state", state, nindent__);
+    }
+
+    AdotDebug::AdotDebug(void)
+    {
+      m_header.mgid = 1910;
+      clear();
+    }
+
+    void
+    AdotDebug::clear(void)
+    {
+      dt = 0;
+      k_d = 0;
+      range1 = 0;
+      range2 = 0;
+      range3 = 0;
+      range4 = 0;
+      u = 0;
+      v = 0;
+      w = 0;
+      phi = 0;
+      theta = 0;
+      psi = 0;
+      adot = 0;
+    }
+
+    bool
+    AdotDebug::fieldsEqual(const Message& msg__) const
+    {
+      const IMC::AdotDebug& other__ = static_cast<const AdotDebug&>(msg__);
+      if (dt != other__.dt) return false;
+      if (k_d != other__.k_d) return false;
+      if (range1 != other__.range1) return false;
+      if (range2 != other__.range2) return false;
+      if (range3 != other__.range3) return false;
+      if (range4 != other__.range4) return false;
+      if (u != other__.u) return false;
+      if (v != other__.v) return false;
+      if (w != other__.w) return false;
+      if (phi != other__.phi) return false;
+      if (theta != other__.theta) return false;
+      if (psi != other__.psi) return false;
+      if (adot != other__.adot) return false;
+      return true;
+    }
+
+    int
+    AdotDebug::validate(void) const
+    {
+      return false;
+    }
+
+    uint8_t*
+    AdotDebug::serializeFields(uint8_t* bfr__) const
+    {
+      uint8_t* ptr__ = bfr__;
+      ptr__ += IMC::serialize(dt, ptr__);
+      ptr__ += IMC::serialize(k_d, ptr__);
+      ptr__ += IMC::serialize(range1, ptr__);
+      ptr__ += IMC::serialize(range2, ptr__);
+      ptr__ += IMC::serialize(range3, ptr__);
+      ptr__ += IMC::serialize(range4, ptr__);
+      ptr__ += IMC::serialize(u, ptr__);
+      ptr__ += IMC::serialize(v, ptr__);
+      ptr__ += IMC::serialize(w, ptr__);
+      ptr__ += IMC::serialize(phi, ptr__);
+      ptr__ += IMC::serialize(theta, ptr__);
+      ptr__ += IMC::serialize(psi, ptr__);
+      ptr__ += IMC::serialize(adot, ptr__);
+      return ptr__;
+    }
+
+    uint16_t
+    AdotDebug::deserializeFields(const uint8_t* bfr__, uint16_t size__)
+    {
+      const uint8_t* start__ = bfr__;
+      bfr__ += IMC::deserialize(dt, bfr__, size__);
+      bfr__ += IMC::deserialize(k_d, bfr__, size__);
+      bfr__ += IMC::deserialize(range1, bfr__, size__);
+      bfr__ += IMC::deserialize(range2, bfr__, size__);
+      bfr__ += IMC::deserialize(range3, bfr__, size__);
+      bfr__ += IMC::deserialize(range4, bfr__, size__);
+      bfr__ += IMC::deserialize(u, bfr__, size__);
+      bfr__ += IMC::deserialize(v, bfr__, size__);
+      bfr__ += IMC::deserialize(w, bfr__, size__);
+      bfr__ += IMC::deserialize(phi, bfr__, size__);
+      bfr__ += IMC::deserialize(theta, bfr__, size__);
+      bfr__ += IMC::deserialize(psi, bfr__, size__);
+      bfr__ += IMC::deserialize(adot, bfr__, size__);
+      return bfr__ - start__;
+    }
+
+    uint16_t
+    AdotDebug::reverseDeserializeFields(const uint8_t* bfr__, uint16_t size__)
+    {
+      const uint8_t* start__ = bfr__;
+      bfr__ += IMC::reverseDeserialize(dt, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(k_d, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(range1, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(range2, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(range3, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(range4, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(u, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(v, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(w, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(phi, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(theta, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(psi, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(adot, bfr__, size__);
+      return bfr__ - start__;
+    }
+
+    void
+    AdotDebug::fieldsToJSON(std::ostream& os__, unsigned nindent__) const
+    {
+      IMC::toJSON(os__, "dt", dt, nindent__);
+      IMC::toJSON(os__, "k_d", k_d, nindent__);
+      IMC::toJSON(os__, "range1", range1, nindent__);
+      IMC::toJSON(os__, "range2", range2, nindent__);
+      IMC::toJSON(os__, "range3", range3, nindent__);
+      IMC::toJSON(os__, "range4", range4, nindent__);
+      IMC::toJSON(os__, "u", u, nindent__);
+      IMC::toJSON(os__, "v", v, nindent__);
+      IMC::toJSON(os__, "w", w, nindent__);
+      IMC::toJSON(os__, "phi", phi, nindent__);
+      IMC::toJSON(os__, "theta", theta, nindent__);
+      IMC::toJSON(os__, "psi", psi, nindent__);
+      IMC::toJSON(os__, "adot", adot, nindent__);
     }
   }
 }
