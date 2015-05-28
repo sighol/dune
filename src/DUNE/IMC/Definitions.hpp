@@ -26,7 +26,7 @@
 //***************************************************************************
 // Automatically generated.                                                 *
 //***************************************************************************
-// IMC XML MD5: dd186813efb490ac251f1633db2ebf3a                            *
+// IMC XML MD5: 428f13c4fdea22e19e769a78b6dd23af                            *
 //***************************************************************************
 
 #ifndef DUNE_IMC_DEFINITIONS_HPP_INCLUDED_
@@ -19699,6 +19699,69 @@ namespace DUNE
       getFixedSerializationSize(void) const
       {
         return 104;
+      }
+
+      void
+      fieldsToJSON(std::ostream& os__, unsigned nindent__) const;
+    };
+
+    //! Simulated Time.
+    class SimulatedTime: public Message
+    {
+    public:
+      //! Timestamp.
+      fp64_t htime;
+      //! Timestep.
+      fp32_t dt;
+
+      static uint16_t
+      getIdStatic(void)
+      {
+        return 1920;
+      }
+
+      SimulatedTime(void);
+
+      Message*
+      clone(void) const
+      {
+        return new SimulatedTime(*this);
+      }
+
+      void
+      clear(void);
+
+      bool
+      fieldsEqual(const Message& msg__) const;
+
+      int
+      validate(void) const;
+
+      uint8_t*
+      serializeFields(uint8_t* bfr__) const;
+
+      uint16_t
+      deserializeFields(const uint8_t* bfr__, uint16_t size__);
+
+      uint16_t
+      reverseDeserializeFields(const uint8_t* bfr__, uint16_t size__);
+
+      uint16_t
+      getId(void) const
+      {
+        return SimulatedTime::getIdStatic();
+      }
+
+      const char*
+      getName(void) const
+      {
+        return "SimulatedTime";
+      }
+
+      unsigned
+      getFixedSerializationSize(void) const
+      {
+        return 12;
       }
 
       void

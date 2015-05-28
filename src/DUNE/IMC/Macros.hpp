@@ -26,7 +26,7 @@
 //***************************************************************************
 // Automatically generated.                                                 *
 //***************************************************************************
-// IMC XML MD5: dd186813efb490ac251f1633db2ebf3a                            *
+// IMC XML MD5: 428f13c4fdea22e19e769a78b6dd23af                            *
 //***************************************************************************
 
 #ifndef DUNE_IMC_MACROS_HPP_INCLUDED_
@@ -524,5 +524,7 @@
 #define DUNE_IMC_RECONCONTROLSTATE 1905
 //! AdotDebug identification number.
 #define DUNE_IMC_ADOTDEBUG 1910
+//! SimulatedTime identification number.
+#define DUNE_IMC_SIMULATEDTIME 1920
 
 #endif

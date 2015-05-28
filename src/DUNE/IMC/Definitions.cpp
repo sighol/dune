@@ -26,7 +26,7 @@
 //***************************************************************************
 // Automatically generated.                                                 *
 //***************************************************************************
-// IMC XML MD5: dd186813efb490ac251f1633db2ebf3a                            *
+// IMC XML MD5: 428f13c4fdea22e19e769a78b6dd23af                            *
 //***************************************************************************
 
 // ISO C++ 98 headers.
@@ -20673,6 +20673,68 @@ namespace DUNE
       IMC::toJSON(os__, "theta", theta, nindent__);
       IMC::toJSON(os__, "psi", psi, nindent__);
       IMC::toJSON(os__, "adot", adot, nindent__);
+    }
+
+    SimulatedTime::SimulatedTime(void)
+    {
+      m_header.mgid = 1920;
+      clear();
+    }
+
+    void
+    SimulatedTime::clear(void)
+    {
+      htime = 0;
+      dt = 0;
+    }
+
+    bool
+    SimulatedTime::fieldsEqual(const Message& msg__) const
+    {
+      const IMC::SimulatedTime& other__ = static_cast<const SimulatedTime&>(msg__);
+      if (htime != other__.htime) return false;
+      if (dt != other__.dt) return false;
+      return true;
+    }
+
+    int
+    SimulatedTime::validate(void) const
+    {
+      return false;
+    }
+
+    uint8_t*
+    SimulatedTime::serializeFields(uint8_t* bfr__) const
+    {
+      uint8_t* ptr__ = bfr__;
+      ptr__ += IMC::serialize(htime, ptr__);
+      ptr__ += IMC::serialize(dt, ptr__);
+      return ptr__;
+    }
+
+    uint16_t
+    SimulatedTime::deserializeFields(const uint8_t* bfr__, uint16_t size__)
+    {
+      const uint8_t* start__ = bfr__;
+      bfr__ += IMC::deserialize(htime, bfr__, size__);
+      bfr__ += IMC::deserialize(dt, bfr__, size__);
+      return bfr__ - start__;
+    }
+
+    uint16_t
+    SimulatedTime::reverseDeserializeFields(const uint8_t* bfr__, uint16_t size__)
+    {
+      const uint8_t* start__ = bfr__;
+      bfr__ += IMC::reverseDeserialize(htime, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(dt, bfr__, size__);
+      return bfr__ - start__;
+    }
+
+    void
+    SimulatedTime::fieldsToJSON(std::ostream& os__, unsigned nindent__) const
+    {
+      IMC::toJSON(os__, "htime", htime, nindent__);
+      IMC::toJSON(os__, "dt", dt, nindent__);
     }
   }
 }

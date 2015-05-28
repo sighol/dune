@@ -26,7 +26,7 @@
 //***************************************************************************
 // Automatically generated.                                                 *
 //***************************************************************************
-// IMC XML MD5: dd186813efb490ac251f1633db2ebf3a                            *
+// IMC XML MD5: 428f13c4fdea22e19e769a78b6dd23af                            *
 //***************************************************************************
 
 #ifndef DUNE_IMC_CONSTANTS_HPP_INCLUDED_
@@ -35,9 +35,9 @@
 //! IMC version string.
 #define DUNE_IMC_CONST_VERSION "5.4.4"
 //! Git repository information.
-#define DUNE_IMC_CONST_GIT_INFO "2015-05-08 55b7e18  (HEAD, tag: tbs-test, origin/ntnu-remus, origin/HEAD, lsts/ntnu-remus, ntnu-remus)"
+#define DUNE_IMC_CONST_GIT_INFO "2015-05-28 df5505f  (HEAD, sighol/ntnu-remus, ntnu-remus)"
 //! MD5 sum of XML specification file.
-#define DUNE_IMC_CONST_MD5 "dd186813efb490ac251f1633db2ebf3a"
+#define DUNE_IMC_CONST_MD5 "428f13c4fdea22e19e769a78b6dd23af"
 //! Synchronization number.
 #define DUNE_IMC_CONST_SYNC 0xFE54
 //! Reversed synchronization number.
