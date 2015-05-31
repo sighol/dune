@@ -26,7 +26,7 @@
 //***************************************************************************
 // Automatically generated.                                                 *
 //***************************************************************************
-// IMC XML MD5: 428f13c4fdea22e19e769a78b6dd23af                            *
+// IMC XML MD5: 813aa46274238e561c390e53d8fa8fb5                            *
 //***************************************************************************
 
 #ifndef DUNE_IMC_MACROS_HPP_INCLUDED_
@@ -526,5 +526,13 @@
 #define DUNE_IMC_ADOTDEBUG 1910
 //! SimulatedTime identification number.
 #define DUNE_IMC_SIMULATEDTIME 1920
+//! ReconDesiredHeadingAngle identification number.
+#define DUNE_IMC_RECONDESIREDHEADINGANGLE 1930
+//! ReconDesiredHeadingWaypoint identification number.
+#define DUNE_IMC_RECONDESIREDHEADINGWAYPOINT 1931
+//! ReconDesiredSpeed identification number.
+#define DUNE_IMC_RECONDESIREDSPEED 1932
+//! ReconDesiredZ identification number.
+#define DUNE_IMC_RECONDESIREDZ 1933
 
 #endif

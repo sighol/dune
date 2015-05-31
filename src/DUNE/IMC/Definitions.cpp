@@ -26,7 +26,7 @@
 //***************************************************************************
 // Automatically generated.                                                 *
 //***************************************************************************
-// IMC XML MD5: 428f13c4fdea22e19e769a78b6dd23af                            *
+// IMC XML MD5: 813aa46274238e561c390e53d8fa8fb5                            *
 //***************************************************************************
 
 // ISO C++ 98 headers.
@@ -20735,6 +20735,272 @@ namespace DUNE
     {
       IMC::toJSON(os__, "htime", htime, nindent__);
       IMC::toJSON(os__, "dt", dt, nindent__);
+    }
+
+    ReconDesiredHeadingAngle::ReconDesiredHeadingAngle(void)
+    {
+      m_header.mgid = 1930;
+      clear();
+    }
+
+    void
+    ReconDesiredHeadingAngle::clear(void)
+    {
+      value = 0;
+    }
+
+    bool
+    ReconDesiredHeadingAngle::fieldsEqual(const Message& msg__) const
+    {
+      const IMC::ReconDesiredHeadingAngle& other__ = static_cast<const ReconDesiredHeadingAngle&>(msg__);
+      if (value != other__.value) return false;
+      return true;
+    }
+
+    int
+    ReconDesiredHeadingAngle::validate(void) const
+    {
+      return false;
+    }
+
+    uint8_t*
+    ReconDesiredHeadingAngle::serializeFields(uint8_t* bfr__) const
+    {
+      uint8_t* ptr__ = bfr__;
+      ptr__ += IMC::serialize(value, ptr__);
+      return ptr__;
+    }
+
+    uint16_t
+    ReconDesiredHeadingAngle::deserializeFields(const uint8_t* bfr__, uint16_t size__)
+    {
+      const uint8_t* start__ = bfr__;
+      bfr__ += IMC::deserialize(value, bfr__, size__);
+      return bfr__ - start__;
+    }
+
+    uint16_t
+    ReconDesiredHeadingAngle::reverseDeserializeFields(const uint8_t* bfr__, uint16_t size__)
+    {
+      const uint8_t* start__ = bfr__;
+      bfr__ += IMC::reverseDeserialize(value, bfr__, size__);
+      return bfr__ - start__;
+    }
+
+    fp64_t
+    ReconDesiredHeadingAngle::getValueFP(void) const
+    {
+      return static_cast<fp64_t>(value);
+    }
+
+    void
+    ReconDesiredHeadingAngle::setValueFP(fp64_t val)
+    {
+      value = static_cast<fp64_t>(val);
+    }
+
+    void
+    ReconDesiredHeadingAngle::fieldsToJSON(std::ostream& os__, unsigned nindent__) const
+    {
+      IMC::toJSON(os__, "value", value, nindent__);
+    }
+
+    ReconDesiredHeadingWaypoint::ReconDesiredHeadingWaypoint(void)
+    {
+      m_header.mgid = 1931;
+      clear();
+    }
+
+    void
+    ReconDesiredHeadingWaypoint::clear(void)
+    {
+      lat = 0;
+      lon = 0;
+    }
+
+    bool
+    ReconDesiredHeadingWaypoint::fieldsEqual(const Message& msg__) const
+    {
+      const IMC::ReconDesiredHeadingWaypoint& other__ = static_cast<const ReconDesiredHeadingWaypoint&>(msg__);
+      if (lat != other__.lat) return false;
+      if (lon != other__.lon) return false;
+      return true;
+    }
+
+    int
+    ReconDesiredHeadingWaypoint::validate(void) const
+    {
+      return false;
+    }
+
+    uint8_t*
+    ReconDesiredHeadingWaypoint::serializeFields(uint8_t* bfr__) const
+    {
+      uint8_t* ptr__ = bfr__;
+      ptr__ += IMC::serialize(lat, ptr__);
+      ptr__ += IMC::serialize(lon, ptr__);
+      return ptr__;
+    }
+
+    uint16_t
+    ReconDesiredHeadingWaypoint::deserializeFields(const uint8_t* bfr__, uint16_t size__)
+    {
+      const uint8_t* start__ = bfr__;
+      bfr__ += IMC::deserialize(lat, bfr__, size__);
+      bfr__ += IMC::deserialize(lon, bfr__, size__);
+      return bfr__ - start__;
+    }
+
+    uint16_t
+    ReconDesiredHeadingWaypoint::reverseDeserializeFields(const uint8_t* bfr__, uint16_t size__)
+    {
+      const uint8_t* start__ = bfr__;
+      bfr__ += IMC::reverseDeserialize(lat, bfr__, size__);
+      bfr__ += IMC::reverseDeserialize(lon, bfr__, size__);
+      return bfr__ - start__;
+    }
+
+    void
+    ReconDesiredHeadingWaypoint::fieldsToJSON(std::ostream& os__, unsigned nindent__) const
+    {
+      IMC::toJSON(os__, "lat", lat, nindent__);
+      IMC::toJSON(os__, "lon", lon, nindent__);
+    }
+
+    ReconDesiredSpeed::ReconDesiredSpeed(void)
+    {
+      m_header.mgid = 1932;
+      clear();
+    }
+
+    void
+    ReconDesiredSpeed::clear(void)
+    {
+      value = 0;
+    }
+
+    bool
+    ReconDesiredSpeed::fieldsEqual(const Message& msg__) const
+    {
+      const IMC::ReconDesiredSpeed& other__ = static_cast<const ReconDesiredSpeed&>(msg__);
+      if (value != other__.value) return false;
+      return true;
+    }
+
+    int
+    ReconDesiredSpeed::validate(void) const
+    {
+      return false;
+    }
+
+    uint8_t*
+    ReconDesiredSpeed::serializeFields(uint8_t* bfr__) const
+    {
+      uint8_t* ptr__ = bfr__;
+      ptr__ += IMC::serialize(value, ptr__);
+      return ptr__;
+    }
+
+    uint16_t
+    ReconDesiredSpeed::deserializeFields(const uint8_t* bfr__, uint16_t size__)
+    {
+      const uint8_t* start__ = bfr__;
+      bfr__ += IMC::deserialize(value, bfr__, size__);
+      return bfr__ - start__;
+    }
+
+    uint16_t
+    ReconDesiredSpeed::reverseDeserializeFields(const uint8_t* bfr__, uint16_t size__)
+    {
+      const uint8_t* start__ = bfr__;
+      bfr__ += IMC::reverseDeserialize(value, bfr__, size__);
+      return bfr__ - start__;
+    }
+
+    fp64_t
+    ReconDesiredSpeed::getValueFP(void) const
+    {
+      return static_cast<fp64_t>(value);
+    }
+
+    void
+    ReconDesiredSpeed::setValueFP(fp64_t val)
+    {
+      value = static_cast<fp64_t>(val);
+    }
+
+    void
+    ReconDesiredSpeed::fieldsToJSON(std::ostream& os__, unsigned nindent__) const
+    {
+      IMC::toJSON(os__, "value", value, nindent__);
+    }
+
+    ReconDesiredZ::ReconDesiredZ(void)
+    {
+      m_header.mgid = 1933;
+      clear();
+    }
+
+    void
+    ReconDesiredZ::clear(void)
+    {
+      value = 0;
+    }
+
+    bool
+    ReconDesiredZ::fieldsEqual(const Message& msg__) const
+    {
+      const IMC::ReconDesiredZ& other__ = static_cast<const ReconDesiredZ&>(msg__);
+      if (value != other__.value) return false;
+      return true;
+    }
+
+    int
+    ReconDesiredZ::validate(void) const
+    {
+      return false;
+    }
+
+    uint8_t*
+    ReconDesiredZ::serializeFields(uint8_t* bfr__) const
+    {
+      uint8_t* ptr__ = bfr__;
+      ptr__ += IMC::serialize(value, ptr__);
+      return ptr__;
+    }
+
+    uint16_t
+    ReconDesiredZ::deserializeFields(const uint8_t* bfr__, uint16_t size__)
+    {
+      const uint8_t* start__ = bfr__;
+      bfr__ += IMC::deserialize(value, bfr__, size__);
+      return bfr__ - start__;
+    }
+
+    uint16_t
+    ReconDesiredZ::reverseDeserializeFields(const uint8_t* bfr__, uint16_t size__)
+    {
+      const uint8_t* start__ = bfr__;
+      bfr__ += IMC::reverseDeserialize(value, bfr__, size__);
+      return bfr__ - start__;
+    }
+
+    fp64_t
+    ReconDesiredZ::getValueFP(void) const
+    {
+      return static_cast<fp64_t>(value);
+    }
+
+    void
+    ReconDesiredZ::setValueFP(fp64_t val)
+    {
+      value = static_cast<fp64_t>(val);
+    }
+
+    void
+    ReconDesiredZ::fieldsToJSON(std::ostream& os__, unsigned nindent__) const
+    {
+      IMC::toJSON(os__, "value", value, nindent__);
     }
   }
 }
